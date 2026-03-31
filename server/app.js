@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const { createServer } = require("http");
@@ -12,7 +14,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // const GEMINI_API_KEY = "AIzaSyARPS3UUzGjuF5xT8hisiLtKO4ifuC4II0"
-const GEMINI_API_KEY = "AIzaSyCSVnOB6jGjVxdGtPCvOlf4vWl14qxLA9c";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+if (!GEMINI_API_KEY) {
+  throw new Error("GEMINI_API_KEY is missing in .env");
+}
 
 const rooms = {};
 
