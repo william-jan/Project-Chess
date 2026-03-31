@@ -11,6 +11,7 @@ const { Chess } = require("chess.js");
 const app = express();
 const httpServer = createServer(app);
 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -386,6 +387,8 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+httpServer.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
