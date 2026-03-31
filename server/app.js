@@ -13,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const GEMINI_API_KEY = "AIzaSyARPS3UUzGjuF5xT8hisiLtKO4ifuC4II0"
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 if (!GEMINI_API_KEY) {
