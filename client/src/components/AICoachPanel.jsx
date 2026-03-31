@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
-const baseUrl = "http://localhost:3000"
+const baseUrl = "https://chess-server.maulanaakhmad.site"
 
 export default function AICoachPanel({ fen, history, mode }) {
   const [loading, setLoading] = useState(false)

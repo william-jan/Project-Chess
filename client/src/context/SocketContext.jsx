@@ -3,7 +3,7 @@ import { io } from "socket.io-client"
 
 const SocketContext = createContext()
 
-const socket = io("http://localhost:3000")
+const socket = io("https://chess-server.maulanaakhmad.site")
 
 export function SocketProvider({ children }) {
   return (
